@@ -1,13 +1,13 @@
-FROM node:24-slim
+FROM node:20
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json ./
 
-RUN npm install --omit=dev
+RUN npm install 
 
 COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start-dev"]
